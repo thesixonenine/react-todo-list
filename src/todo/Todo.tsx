@@ -1,10 +1,9 @@
-import './App.css'
 import TodoItem from "./TodoItem.tsx";
-import Item from './structs/Item'
+import Item from './structs/Item.ts'
 import {ChangeEvent, useState} from "react";
 
 
-function App() {
+function Todo() {
     const [todoList, setTodoList] = useState([
         {id: 1, content: "React", color: 'green'},
         {id: 2, content: "Vue", color: 'blue'},
@@ -29,18 +28,19 @@ function App() {
                     content: value,
                     color: 'green',
                 }
-            ])
+            ]);
+            setValue("");
             console.log(todoList)
         }
     }
 
     return (
-        <>
-            <header>
-                <h1>Simple Todo List</h1>
+        <div className="max-w-7xl mx-0 my-auto p-8 text-center">
+            <header className="mb-12">
+                <h1 style={{fontSize: 32,fontWeight: "bold"}}>My Lists</h1>
             </header>
-            <div className='list'>
-                <ul>
+            <div className="flex justify-center">
+                <ul className="mb-12">
                     {
                         todoList.map(
                             (item) =>
@@ -51,11 +51,11 @@ function App() {
             </div>
             <div>
 
-                <input type='text' value={value} onChange={handleInputChange} placeholder='添加todo'/>
-                <button onClick={appendItem}>确定</button>
+                <input className="bg-sky-200" type='text' value={value} onChange={handleInputChange} placeholder='添加todo'/>
+                <button className="ml-2" onClick={appendItem}>确定</button>
             </div>
-        </>
+        </div>
     )
 }
 
-export default App
+export default Todo

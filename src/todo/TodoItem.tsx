@@ -1,4 +1,4 @@
-import Item from './structs/Item'
+import Item from './structs/Item.ts'
 
 interface TodoItemProps {
     // 父组件传递的对象
@@ -10,6 +10,6 @@ interface TodoItemProps {
 export default function TodoItem({item, click}: TodoItemProps) {
 
     return <>
-        <li style={{color: item.color}} onClick={() => click(item)}>{item.content}</li>
+        <li className="list-none mt-4" style={{color: item.color}} onClick={() => click(item)}>{item.content}</li>
     </>
 }
