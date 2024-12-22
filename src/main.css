@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+    .login-form-input-wrap {
+        @apply border-solid border border-white flex justify-between items-center mb-[40px] h-[60px] w-[90%] rounded-[50px];
+    }
+    .login-form-input-wrap i {
+        @apply text-[1.2rem] text-white pr-[25px]
+    }
+    .login-form-input {
+        @apply bg-transparent text-[1.2rem] text-white px-[25px] py-[5px] w-full outline-0
+    }
+    .login-form-input::placeholder {
+        @apply text-[1.2rem] text-white
+    }
+}
