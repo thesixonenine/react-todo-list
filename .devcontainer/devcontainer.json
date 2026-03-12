@@ -1,0 +1,8 @@
+{
+  "name": "dev-typescript-node",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": { "MY_PAT": "${localEnv:MY_PAT}" }
+  },
+  "postStartCommand": "chezmoi update"
+}
